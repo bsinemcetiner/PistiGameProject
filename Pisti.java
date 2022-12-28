@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class Pisti {
@@ -49,7 +48,7 @@ public class Pisti {
             } else {
                 deckOfCards.add("Clubs : " + (i % 13 + 1));
             }
-        }Collections.shuffle(deckOfCards);
+        }
     }
 }
 
@@ -83,11 +82,3 @@ public class Pisti {
                 Deck [l++] = new Card (Suits[i], Cards[j]);
         System.out.println(Card);
 */
-
- /* String[] Jokers = new String[4];
-        Jokers[0] = ("Spades 11");
-        Jokers[1] = ("Hearts 11");
-        Jokers[2] = ("Diamonds 11");
-        Jokers[3] = ("Clubs 11");
-
-        */

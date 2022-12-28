@@ -8,5 +8,4 @@ public class Card {
     public Card(String Suits, String Card) {
     }
 
-    //Card = new Card [52];
 }
