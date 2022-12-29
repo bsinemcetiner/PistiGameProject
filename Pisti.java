@@ -5,38 +5,37 @@ import java.util.Random;
 public class Pisti {
 
     private Card[] Deck;
-    public static void main (String [] args){
 
-        String [] Suits = {"Spades ♠", "Clubs ♣" , "Hearts ♥", "Diamonds ♦"};
-        String [] Cards = {"A","2","3","4","5","6","7","8","9","J","Q","K"};
+    public static void main(String[] args) {
+
+        String[] Suits = {"Spades ♠", "Clubs ♣", "Hearts ♥", "Diamonds ♦"};
+        String[] Cards = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         //String [] Deck = new String [52];
-        Card [] Deck = new Card[52];
+        Card[] Deck = new Card[52];
 
         int l = 0;
-        for (int i=0; i < Suits.length; i++) {
-            for (int j=0; j < Cards.length; j++) {
+        for (int i = 0; i < Suits.length; i++) {
+            for (int j = 0; j < Cards.length; j++) {
                 Deck[l++] = new Card(Suits[i], Cards[j]);
-                // System.out.println(Suits[i]+ " " + Cards[j]);
+                //System.out.println(Suits[i]+ " " + Cards[j]);
             }
         }
 
-       /* for (int i=0; i< Deck.length; i++){
-            Deck [i]= new Card (Suits[i/13], Cards[i%13]);
+        Shuffle(Deck);
+        for (int c = 0; c < 52; c++) {
+            System.out.println(Deck[c]);
         }
-        */
 
-         Shuffle(Deck);
-         for(int a = 0; a < Deck.length ; a++){
-             System.out.println(Deck[a]);
-         }
-
+        Cut(Deck);
+        deckOfCards();
+        DealCard();
 
     }
 
-    public  static void Shuffle (Card[] Deck) {
+    public static void Shuffle(Card[] Deck) {
         //String[] Deck = new String[52];
         Random r = new Random();
-        for (int i=0; i<52; i++){
+        for (int i = 0; i <= 52; i++) {
             int a = r.nextInt(52);
             int b = r.nextInt(52);
             Card temp = Deck[a];
@@ -44,20 +43,23 @@ public class Pisti {
             Deck[b] = temp;
         }
     }
-    public static void Cut (Card [] Deck){
-        Scanner sc = new Scanner (System.in);
+
+    public static void Cut(Card[] Deck) {
+        System.out.println("Enter the number you want to cut:");
+        Scanner sc = new Scanner(System.in);
+        //while döngüsü yap
         int m = sc.nextInt();
-        if (m>0 && m<=52){
+        if (m > 0 && m <= 52) {
             System.out.println("It is valid");
         } else {
             System.out.println("It is not valid");
         }
-        Card [] k = new Card [52];
-        for (int i=0; i< (Deck.length - m)+ 1; i++){
-            k[Deck.length - m+i] = Deck[i];
+        Card[] k = new Card[52];
+        for (int i = 0; i < (Deck.length - m) + 1; i++) {
+            k[(Deck.length - m)] = Deck[i];
         }
-        for (int j=m; j< Deck.length; j++){
-            k [j] = Deck[j-m];
+        for (int j = m; j < Deck.length; j++) {
+            k[j] = Deck[j - m];
         }
     }
 
@@ -72,7 +74,7 @@ public class Pisti {
 
 
     private static void deckOfCards(){
-        System.out.println("All cards = " + deckOfCards);
+        System.out.println("All cards = " + 52);
 
         System.out.println("Cards are dealing");
         for (int i=0; i<53; i++){
@@ -87,7 +89,8 @@ public class Pisti {
             }
         }
     }
-    public static void DealCard(int dealTo) {
+    public static void DealCard() {
+        int dealTo= 0;
         for (int i = 0; i < 4; i++) {
             if (dealTo == Floor)
                 FloorCards.add(deckOfCards.get(0));
@@ -107,6 +110,9 @@ public class Pisti {
     }
 
 }
+
+
+
 /*      String [] Suits = new String [4];
         Suits[0] = "Spades ♠";    // maça
         Suits[1] = "Clubs ♣";     // sinek
@@ -127,7 +133,7 @@ public class Pisti {
         Cards[10] = "11";
         Cards[11] = "12";
         Cards[12] = "13";
-        */   
+        */
 
 /*Shuffle (Deck);
         int l = 0;
@@ -144,3 +150,9 @@ public class Pisti {
             }
         }
         */
+//dealCard (int dealTo){
+
+/*for (int i=0; i< Deck.length; i++){
+            Deck [i]= new Card (Suits[i/13], Cards[i%13]);
+        }
+         */
