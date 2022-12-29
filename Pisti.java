@@ -1,9 +1,9 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Pisti {
 
+    //private static boolean function;
     private Card[] Deck;
 
     public static void main(String[] args) {
@@ -27,8 +27,15 @@ public class Pisti {
         }
 
         Cut(Deck);
-        deckOfCards();
-        DealCard();
+        boolean bool = true;
+        while (bool){
+            if (bool = true){
+                System.out.println("It is valid");
+                bool = false;
+            }
+        }
+        //deckOfCards();
+        //DealCard();
 
     }
 
@@ -44,39 +51,77 @@ public class Pisti {
         }
     }
 
-    public static void Cut(Card[] Deck) {
-        System.out.println("Enter the number you want to cut:");
+    public static void Cut (Card[] Deck){
         Scanner sc = new Scanner(System.in);
-        //while döngüsü yap
-        int m = sc.nextInt();
-        if (m > 0 && m <= 52) {
-            System.out.println("It is valid");
-        } else {
-            System.out.println("It is not valid");
-        }
-        Card[] k = new Card[52];
+        int m = 0;
+        while (m>=0 && m<=52){
+            System.out.println("Enter the number you want to cut: ");
+            m= sc.nextInt();
+
+        } Card[] k = new Card[52];
         for (int i = 0; i < (Deck.length - m) + 1; i++) {
             k[(Deck.length - m)] = Deck[i];
         }
         for (int j = m; j < Deck.length; j++) {
             k[j] = Deck[j - m];
+
+
         }
     }
 
+    /*public static void Cut(Card[] Deck) {
+        Scanner sc = new Scanner(System.in);
+        Random r = new Random();
+        r.nextBoolean();
+        int m = 0;
+        System.out.println("Enter the number you want to cut:");
 
-    static ArrayList deckOfCards = new ArrayList (52);
-    private static ArrayList FloorCards = new ArrayList();
+        while (m >= 0 && m <= 52) {  //m >= 0 && m <= 52  boolean = true
+            m = sc.nextInt();
+            if (m<0 || m>52) {
+                System.out.println("It is valid");
+            }
+            boolean b = false;
+
+String [] user = new String [m];
+        String [] computer = new String [Deck.length-m];
+
+        for (int i=0; i< user.length; i++){
+            user [i] = String.valueOf(Deck [i]);
+        }
+            Card[] k = new Card[52];
+            for (int i = 0; i < (Deck.length - m) + 1; i++) {
+                k[(Deck.length - m)] = Deck[i];
+            }
+            for (int j = m; j < Deck.length; j++) {
+                k[j] = Deck[j - m];
+            }
+
+    }
+   // public static boolean getRandomBoolean() {
+
+
+
+    }
+
+     */
+}
+
+
+
+    private static int [] deckOfCards = new int[52];
+    private static String [] FloorCards = new String[4];
     private static int User= 1;
     private static int Computer =1;
     private static int Floor =1;
-    private static ArrayList UserCards = new ArrayList();
-    private static ArrayList ComputerCards = new ArrayList();
+    private static String [] UserCards = new String[4];
+    private static String [] ComputerCards = new String [4];
 
 
     private static void deckOfCards(){
-        System.out.println("All cards = " + 52);
+        System.out.println("All cards = 52 ");
+        System.out.println("All cards are dealing");
 
-        System.out.println("Cards are dealing");
         for (int i=0; i<53; i++){
             if (i>=0 && i<13){
                deckOfCards.add ("Spades : " + (i % 13 + 1));
@@ -156,3 +201,19 @@ public class Pisti {
             Deck [i]= new Card (Suits[i/13], Cards[i%13]);
         }
          */
+/*if (m > 0 && m <= 52) {
+        System.out.println("It is valid");
+        } else {
+        System.out.println("It is not valid");
+        }
+
+ */
+/*do {
+        System.out.println("Enter the number you want to cut:");
+        m = sc.nextInt();
+        if ((m >= 0 && m <= 52)) {
+        System.out.println("It is valid");
+        }
+        } while (m >= 0 && m <= 52);
+
+ */
