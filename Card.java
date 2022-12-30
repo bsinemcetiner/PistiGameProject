@@ -9,6 +9,7 @@ public class Card {
         Cards = C;
     }
     public String toString(){
+
         return Suits + Cards;
     }
 
