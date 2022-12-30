@@ -39,8 +39,8 @@ public class Pisti {
             }
             bool = false;
         }
-        //deckOfCards();
-        //DealCard();
+        deckOfCards();
+        DealCard();
 
     }
 
@@ -75,72 +75,36 @@ public class Pisti {
         }
 
     }
-}
 
 
+    private static final int[] deckOfCards = new int[52];
+    private static final String[] BoardCards = new String[4];
+    private static final String[] UserCards = new String[4];
+    private static final String[] ComputerCards = new String[4];
+    private static final int User = 1;
+    private static final int Computer = 1;
+    private static final int Board = 1;
 
-   /* private static final int [] deckOfCards = new int[52];
-    private static final String  [] FloorCards = new String[4];
-    private static final int User= 1;
-    private static final int Computer =1;
-    private static final int Floor =1;
-    private static final String [] UserCards = new String[4];
-    private static final String [] ComputerCards = new String [4];
 
-
-    private static void deckOfCards(){
+    private static void deckOfCards() {
         System.out.println("All cards = 52 ");
         System.out.println("All cards are dealing");
 
-        for (int i=0; i<53; i++){
-            if (i>=0 && i<13){
-               deckOfCards.add ("Spades : " + (i % 13 + 1));
-            }else if (13 <= i && i < 26) {
-                deckOfCards.add ("Hearts : " + (i % 13 + 1));
-            } else if (26 <= i && i < 39) {
-                deckOfCards.add("Diamonds : " + (i % 13 + 1));
-            } else {
-                deckOfCards.add("Clubs : " + (i % 13 + 1));
+    }
+
+    public static void DealCard() {
+        int dealTo = 0;
+        for (int i = 0; i < 4; i++) {
+
+            if (dealTo == Board) {
+                System.out.println("Last card on the table " + BoardCards);
+
+            } else if (dealTo == User) {
+                System.out.println("You have " + UserCards);
             }
         }
+
     }
-    public static void DealCard() {
-        int dealTo= 0;
-        for (int i = 0; i < 4; i++) {
-            if (dealTo == Floor)
-                FloorCards.add(deckOfCards.get(0));
-            else if (dealTo == Computer)
-                ComputerCards.add(deckOfCards.get(0));
-            else if (dealTo == User)
-                UserCards.add(deckOfCards.get(0));
-            deckOfCards.remove(0);
-        }
-
-        if (dealTo == Floor) {
-            System.out.println("Last card on the table " + FloorCards.get(FloorCards.size() - 1));
-
-        } else if (dealTo == User) {
-            System.out.println("You have " + UserCards);
-        }
-    }
-
 }
 
- /* for (int i=0; i<52; i++){
-            System.out.println(Deck.dealCards());
-            if (i%4==0){
-                System.out.println();
-            }
-        }
-        */
-//dealCard (int dealTo){
 
-/*do {
-        System.out.println("Enter the number you want to cut:");
-        m = sc.nextInt();
-        if (m >= 0 && m <= 52) {
-        System.out.println("It is valid");
-        }
-        } while (m >= 0 && m <= 52);
-
- */
