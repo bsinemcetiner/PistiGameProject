@@ -94,7 +94,7 @@ public class Pisti {
 
     public static void DealCard() {
         int dealTo = 0;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i <= 4; i++) {
 
             if (dealTo == Board) {
                 System.out.println("Last card on the table " + BoardCards);
@@ -102,6 +102,7 @@ public class Pisti {
             } else if (dealTo == User) {
                 System.out.println("You have " + UserCards);
             }
+
         }
 
     }
